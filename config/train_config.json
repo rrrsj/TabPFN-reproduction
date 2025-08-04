@@ -1,0 +1,32 @@
+{
+    "device":1,
+    "log_step":100,
+    "file_num":100,
+    "random_seed":2025,
+    "encoder_layer":12,
+    "latent_dim":512,
+    "VQ_num":5000,
+    "min_value":-10,
+    "max_value":10,
+    "num_head":8,
+    "group_num":2,
+    "activate":"GELU",
+    "norm_type":"L",
+
+    "batch":1,
+    "min_feature":16,
+    "max_feature":32,
+    "min_layer":1,
+    "max_layer":32,
+    "all_cells":75000,
+    "lr":1e-5,
+    "warm_up_step":10,
+    "epoch":10000,
+    "save_step":100,
+    "use_grad_checkpoint":1,
+    "loss_epsilon":0,
+    "cos_time":100000000,
+
+    "checkpoint_path":"./checkpoint",
+    "data_path":"./data/train_data/"
+}
