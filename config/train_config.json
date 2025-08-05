@@ -12,10 +12,13 @@
     "group_num":2,
     "activate":"GELU",
     "norm_type":"L",
+    
 
     "batch":1,
     "min_feature":16,
     "max_feature":32,
+    "min_sample":128.
+    "max_sample":2160,
     "min_layer":1,
     "max_layer":32,
     "all_cells":75000,
@@ -29,4 +32,5 @@
 
     "checkpoint_path":"./checkpoint",
     "data_path":"./data/train_data/"
+
 }
