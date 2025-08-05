@@ -11,6 +11,7 @@ class Pre_Model(nn.Module):
         self.args=args
         self.latent_dim=latent_dim
         self.VQ_dim=VQ_dim
+        self.activate=activate
 
         self.pre_model=nn.Sequential(nn.Linear(self.latent_dim,4*self.latent_dim),
         self.activate,
@@ -21,3 +22,4 @@ class Pre_Model(nn.Module):
 
     def forward(self,x):
         return self.pre_model(x)
+
