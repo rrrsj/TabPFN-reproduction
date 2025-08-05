@@ -17,9 +17,9 @@ class Pre_Model(nn.Module):
         self.activate,
         nn.Linear(4*self.latent_dim,VQ_dim))
 
-        torch.nn.init.zeros_(self.layer2.weight)
 
 
     def forward(self,x):
         return self.pre_model(x)
+
 
