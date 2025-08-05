@@ -5,7 +5,7 @@ sys.path.append('.')
 sys.path.append('..')
 sys.path.append('../..')
 import gc
-from data_pro.data_read import MyDataLoader
+from data_pro.data_provide import MyDataLoader
 import pickle
 from model.Trans_Encoder import Encoder
 import torch.nn as nn
@@ -49,3 +49,4 @@ def train(dataloader):
                     pickle.dump(file_content,f,protocol=pickle.HIGHEST_PROTOCOL)
                 file_content=[]
 train(dataloader)
+
