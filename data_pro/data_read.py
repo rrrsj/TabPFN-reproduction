@@ -43,7 +43,7 @@ class MyDataLoader(Dataset):
         attention_mask=torch.concat([[attention_mask_section2,attention_mask_section3]],dim=-2)
         attention_mask=torch.concat([attention_mask_section1,attention_mask],dim=-1).detach().unsqueeze(1).unsqueeze(1).unsqueeze(1).expand(value.shape[0],value.shape[2],self.args['group_num'],self.args['num_head']//self.args['group_num'],-1,-1)
         continue_embedding=copy.deepcopy(value)
-        continue_embedding[:,-prediction_length,-prediction_num:]=0
+        continue_embedding[:,-prediction_length:,-prediction_num:]=0
 
         mask_y=torch.zeros((value.shape[0],value.shape[1],1))
         mask_y[:,-prediction_length:,:]=1
@@ -51,4 +51,5 @@ class MyDataLoader(Dataset):
         return ans,attention_mask.bool(),continue_embedding.float(),prediction_length
     
     def __len__(self):
+
         return self.args['file_num']
