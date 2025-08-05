@@ -82,7 +82,7 @@ def fig_to_array(fig):
 
 def train(pfn_model,dataloader,optimizer,crition):
     
-    with tqdm(total=args['train_step']*args['epoch']) as _tqdm:
+    with tqdm(total=args['file_num']*args['epoch']) as _tqdm:
         now_step=0
         for now_epoch in range(args['epoch']):  
             for ans,attention_mask,continue_embedding,prediction_length in dataloader: 
@@ -132,5 +132,6 @@ def train(pfn_model,dataloader,optimizer,crition):
                         if now_step%args['save_step']==0:
                             accelerator.save_state(args['checkpoint_path'])
                 
+
 
 train(pfn_model,dataloader,optimizer,crition)
