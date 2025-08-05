@@ -1,1 +1,1 @@
-accelerate launch --config_file ./config/default_config.yaml ./run/train/train_model.py
+accelerate launch --config_file ./config/default_config.yaml ./run/train/train.py
