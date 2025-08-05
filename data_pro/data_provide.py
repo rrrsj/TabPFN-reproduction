@@ -131,7 +131,7 @@ class Data_Provide:
                 def func(batch_size,sample_size):
                     return torch.randn((batch_size,sample_size,1)).float()
             elif func_type=='linear':
-                linear_type=random.choice(['linear,max,min'])
+                linear_type=random.choice(['linear','max','min'])
                 if linear_type=='linear':
                     def func(input_data):
                         weight=torch.randn(input_data.shape[2],1).float()
@@ -363,3 +363,4 @@ class MyDataLoader(Dataset):
         return self.train_step
 
                     
+
