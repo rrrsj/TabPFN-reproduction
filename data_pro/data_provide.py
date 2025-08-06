@@ -69,6 +69,7 @@ class Data_Provide:
         self.model_layer=None
         self.input_feature=None
         self.model=None
+        self.node_functions = dict()
     
     def _init_model(self):
         self.model_type=random.choice(['mlp','scm'])

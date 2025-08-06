@@ -8,7 +8,7 @@ from layer.ffn import FFN
 from layer.Pre_Linear import Pre_Model
 from torch.utils.checkpoint import checkpoint
 
-class Trans_Layer(mm.Module):
+class Trans_Layer(nn.Module):
     def __init__(self,args,latent_dim,num_head,norm_type,activate):
         super(Trans_Layer,self).__init__()
 

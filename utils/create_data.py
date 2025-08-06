@@ -7,7 +7,6 @@ sys.path.append('../..')
 import gc
 from data_pro.data_provide import MyDataLoader
 import pickle
-from model.Trans_Encoder import Encoder
 import torch.nn as nn
 import json
 import random
@@ -17,7 +16,9 @@ from utils.dis_continue import get_dis
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 import copy
-
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="sklearn.cluster._kmeans")
+warnings.filterwarnings("ignore", category=FutureWarning, module="sklearn.preprocessing._discretization")
 
 
 with open('./config/train_config.json') as f:
@@ -45,7 +46,7 @@ def train(dataloader):
 
             if len(file_content)==args['file_num']:
                 now_step=now_step+1
-                with open('./data/train_data/'+str(now_step)+'.pkl','wb') as f:
+                with open(args['data_path']+str(now_step)+'.pkl','wb') as f:
                     pickle.dump(file_content,f,protocol=pickle.HIGHEST_PROTOCOL)
                 file_content=[]
 train(dataloader)

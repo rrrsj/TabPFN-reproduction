@@ -7,7 +7,7 @@ sys.path.append('../..')
 import gc
 from data_pro.data_read import MyDataLoader
 import pickle
-from model.Trans_Encoder import Encoder
+#from model.Trans_Encoder import Encoder
 import torch.nn as nn
 import json
 import random
