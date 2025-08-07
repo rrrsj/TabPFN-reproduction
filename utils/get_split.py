@@ -1,6 +1,8 @@
 import torch
 import sys
+import os
 from torch.utils.data import DataLoader,Dataset,DistributedSampler
+os.chdir('/content/TabPFN-reproduction')
 sys.path.append('.')
 sys.path.append('..')
 sys.path.append('../..')
@@ -12,7 +14,7 @@ import torch.nn as nn
 import json
 import random
 import numpy as np
-import os
+
 from utils.dis_continue import get_dis
 from tqdm import tqdm,trange
 import matplotlib.pyplot as plt
