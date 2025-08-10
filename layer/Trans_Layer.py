@@ -8,7 +8,7 @@ from layer.ffn import FFN
 from layer.Pre_Linear import Pre_Model
 from torch.utils.checkpoint import checkpoint
 
-class Trans_Layer(mm.Module):
+class Trans_Layer(nn.Module):
     def __init__(self,args,latent_dim,num_head,norm_type,activate):
         super(Trans_Layer,self).__init__()
 
@@ -55,5 +55,6 @@ class Trans_Layer(mm.Module):
         embedding=self.backbone[0](embedding)
         embedding=self.backbone[1](embedding.transpose(1,2),attention_mask).transpose(1,2)
         embedding=self.backbone[2](embedding)
+
 
         return embedding
