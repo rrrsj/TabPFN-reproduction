@@ -25,5 +25,5 @@ class FFN(nn.Module):
 
     def forward(self,x):
         mid_x=x
-        ans=self.layer2(self.activate(self.layer1))
-        return norm(ans+x)
+        ans=self.layer2(self.activate(self.layer1(mid_x)))
+        return self.norm(ans+x)

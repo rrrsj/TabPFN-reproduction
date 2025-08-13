@@ -29,5 +29,5 @@ class get_dis:
         temp_ans=[]
         for i in range(len(temp)-1):
             temp_ans.append((temp[i]+temp[i+1])/2)
-            ans=torch.einsum('...cd,...de->...ce',value,torch.tensor(temp_ans).reshape(value.shape[-1],1).to(value.device))
+            ans=torch.einsum('...cd,...de->...ce',value,torch.tensor(temp_ans).unsqueeze(0).to(value.device))
         return ans.squeeze(3)

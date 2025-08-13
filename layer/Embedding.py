@@ -35,4 +35,4 @@ class Embedding(nn.Module):
         if torch.cuda.is_available():
             torch.cuda.set_rng_state(cuda_random_state,device=x.device)
         
-        return x+embedding_temp
+        return x+embedding

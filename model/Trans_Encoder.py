@@ -39,7 +39,6 @@ class Encoder(nn.Module):
             latent_dim=self.latent_dim,
             VQ_dim=self.VQ_num,
             activate=self.activate,
-            norm_type=self.args['norm_type']
         )
 
     def forward(self,attention_mask,continue_embedding,prediction_length):

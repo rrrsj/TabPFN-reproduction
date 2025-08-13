@@ -7,7 +7,7 @@ import math
 from einops import rearrange
 
 class Attention_Layer(nn.Module):
-    def __init__(self,args,latent_dim,num_head,head_dim,attention_type,norm_type=='L'):
+    def __init__(self,args,latent_dim,num_head,head_dim,attention_type,norm_type='L'):
         super(Attention_Layer,self).__init__()
 
         self.latent_dim=latent_dim

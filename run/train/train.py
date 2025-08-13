@@ -66,8 +66,8 @@ chained_scheduler = SequentialLR(
     milestones=[args['warm_up_step']]
 )
 
-state_dict = torch.load("./checkpoint/pytorch_model/mp_rank_00_model_states.pt")
-pfn_model.load_state_dict(state_dict['module'],strict=False)
+#state_dict = torch.load("./checkpoint/pytorch_model/mp_rank_00_model_states.pt")
+#pfn_model.load_state_dict(state_dict['module'],strict=False)
 
 
 pfn_model,optimizer,dataloder,chained_scheduler=accelerator.prepare(pfn_model,optimizer,dataloader,chained_scheduler)
