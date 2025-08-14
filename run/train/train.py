@@ -4,7 +4,6 @@ import os
 from accelerate import Accelerator, DeepSpeedPlugin
 from torch.utils.data import DataLoader,Dataset,DistributedSampler
 from torch.cuda.amp import autocast
-os.chdir('/content/TabPFN-reproduction')
 sys.path.append('.')
 sys.path.append('..')
 sys.path.append('../..')
@@ -136,3 +135,4 @@ def train(pfn_model,dataloader,optimizer,crition):
 
 
 train(pfn_model,dataloader,optimizer,crition)
+
