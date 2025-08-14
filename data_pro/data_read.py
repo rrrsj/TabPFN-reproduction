@@ -37,9 +37,9 @@ class MyDataLoader(Dataset):
         prediction_num=1
         dis_value_ans=self.get_dis.get_ans(value)
         ans=copy.deepcopy(dis_value_ans[:,-prediction_length:,-prediction_num:]).detach()
-        attention_mask_section1=torch.ones((self.args['batch'],value.shape[1],value.shape[1]-prediction_length))
-        attention_mask_section2=torch.zeros((self.args['batch'],value.shape[1]-prediction_length,prediction_length))
-        attention_mask_section3=(torch.eye(prediction_length).reshape(1,prediction_length,prediction_length)).expand(self.args['batch'],-1,-1)
+        attention_mask_section1=torch.ones((1,value.shape[1],value.shape[1]-prediction_length))
+        attention_mask_section2=torch.zeros((1,value.shape[1]-prediction_length,prediction_length))
+        attention_mask_section3=torch.eye(prediction_length).reshape(1,prediction_length,prediction_length)
         attention_mask=torch.concat([attention_mask_section2,attention_mask_section3],dim=-2)
         attention_mask=torch.concat([attention_mask_section1,attention_mask],dim=-1).detach().unsqueeze(1).unsqueeze(1).unsqueeze(1).expand(value.shape[0],value.shape[2],self.args['group_num'],self.args['num_head']//self.args['group_num'],-1,-1)
         continue_embedding=copy.deepcopy(value)
