@@ -2,7 +2,6 @@ import torch
 import sys
 import os
 from torch.utils.data import DataLoader,Dataset,DistributedSampler
-os.chdir('/content/TabPFN-reproduction')
 sys.path.append('.')
 sys.path.append('..')
 sys.path.append('../..')
@@ -60,4 +59,5 @@ print(buck_number)
 
 with open('./utils/split.pkl','wb') as f:
     pickle.dump(buck_number,f)
+
 
