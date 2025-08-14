@@ -2,7 +2,6 @@ import torch
 import sys
 import os
 from torch.utils.data import DataLoader,Dataset,DistributedSampler
-os.chdir('/content/TabPFN-reproduction')
 sys.path.append('.')
 sys.path.append('..')
 sys.path.append('../..')
@@ -52,4 +51,5 @@ def train(dataloader):
                     pickle.dump(file_content,f,protocol=pickle.HIGHEST_PROTOCOL)
                 file_content=[]
 train(dataloader)
+
 
