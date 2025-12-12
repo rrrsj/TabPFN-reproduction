@@ -1,5 +1,4 @@
 # TabPFN-reproduction
-# TabPFN-reproduction
 
 本项目为 [TabPFN](https://github.com/automl/TabPFN) 的复现版本，旨在方便用户复现与理解 TabPFN 算法。核心代码包含数据创建、数据分桶（划分）、以及模型训练三个主要步骤。下方详细介绍每步操作流程，并结合原版 TabPFN 的信息，让你快速上手使用本仓库。
 
